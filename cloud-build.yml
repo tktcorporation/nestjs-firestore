@@ -1,0 +1,14 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      [
+        "build",
+        "--target",
+        "runtime-stage",
+        "-f",
+        "./app/Dockerfile",
+        "-t",
+        "gcr.io/{project-id}/lets-todo-node",
+        "./app",
+      ]
+images: ["gcr.io/{project-id}/lets-todo-node"]
